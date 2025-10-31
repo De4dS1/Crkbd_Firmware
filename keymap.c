@@ -78,7 +78,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [BRCK] = ACTION_TAP_DANCE_DOUBLE(ES_LBRC, ES_RBRC), // [ -> ]
     [PRNT] = ACTION_TAP_DANCE_DOUBLE(ES_LPRN, ES_RPRN), // ( -> )
     [BRCS] = ACTION_TAP_DANCE_DOUBLE(ES_LCBR, ES_RCBR), // { -> }
-    [QUOT] = ACTION_TAP_DANCE_DOUBLE(ES_DQUO, ES_QUOT), // " -> '
+    [QUOT] = ACTION_TAP_DANCE_DOUBLE(ES_QUOT, ES_DQUO), // ' -> "
     [PIPE] = ACTION_TAP_DANCE_DOUBLE(ES_HASH, ES_PIPE), // # -> |
 
     [LYR1] = ACTION_TAP_DANCE_FN(SymGm),
@@ -136,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_TRNS, ES_SLSH, TD(AT), TD(PIPE), ES_DLR, ES_PERC,                      TD(QUES), KC_7,    KC_8,    KC_9,   TD(EXCL), KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,  TD(PLUS),                     TD(BRCK), KC_4,    KC_5,    KC_6,   TD(PRNT), KC_RALT,
+      ES_GRV , KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,  TD(PLUS),                     TD(BRCK), KC_4,    KC_5,    KC_6,   TD(PRNT), KC_RALT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TRNS, ES_BSLS, ES_EQL, ES_AMPR, TD(CIRC), ES_LABK,                     TD(BRCS), KC_1,    KC_2,    KC_3,   TD(QUOT), KC_LALT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -158,11 +158,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [Gaming] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      TD(TAB),   KC_1,   KC_Q,    KC_W,   KC_E,   TD(AUXT),                    KC_TRNS,  KC_F7,   KC_F8,    KC_F9, KC_F10,  KC_TRNS,
+      TD(TAB),   KC_1,   KC_Q,    KC_W,   KC_E,   TD(AUXT),                    KC_F1,    KC_F2,   KC_F3,   KC_F4,  A(KC_F9), A(KC_F10),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,   KC_2,   KC_A,    KC_S,   KC_D,   TD(AUXG),                    KC_TRNS,  KC_F4,   KC_F5,    KC_F6, KC_TRNS, KC_TRNS,
+      KC_LSFT,   KC_2,   KC_A,    KC_S,   KC_D,   TD(AUXG),                    KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,   KC_3,   KC_Z,    KC_X,   KC_C,   TD(AUXB),                    KC_TRNS,  KC_F1,   KC_F2,    KC_F3, KC_TRNS, KC_TRNS,
+      KC_LCTL,   KC_3,   KC_Z,    KC_X,   KC_C,   TD(AUXB),                    KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                         TD(AUX1), TD(AUX2), KC_SPC,    KC_TRNS, TG(Gaming), KC_TRNS
                                       //`--------------------------'  `--------------------------'
