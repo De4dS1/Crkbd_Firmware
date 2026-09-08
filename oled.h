@@ -94,6 +94,7 @@ static void Gamin(void){
      oled_write_P(gmn0, false);
 }
 
+/*
 static void Tex(void){
      static const char PROGMEM tex0[] = {
 	0x93, 0x94, 0x95, 0x96, 0x97,
@@ -104,6 +105,7 @@ static void Tex(void){
      oled_set_cursor(0,2);
      oled_write_P(tex0, false);
 }
+*/
 
 static void Config(void){
      static const char PROGMEM cfg0[] = {
@@ -138,9 +140,6 @@ void Write_lyr(void){
 			case Gaming:
 				Gamin();
 				break;
-			case Latex:
-				Tex();
-				break;
 			case Conf:
 				Config();
 				break;
@@ -160,9 +159,6 @@ void Write_lyr(void){
 				break;
 			case Gaming:
 				Gamin();
-				break;
-			case Latex:
-				Tex();
 				break;
 			case Conf:
 				Config();
